@@ -6,9 +6,9 @@ async function main() {
   console.log("Deploying contracts with the account:", deployer.address);
 
   const Vote = await ethers.getContractFactory("Vote");
-  const vote = await Vote.deploy();
+  const vote = await Vote.deploy(["刘能", "赵四", "张三"]);
 
-  console.log("Vote address:", vote.address);
+  console.log("Vote address:", await vote.getAddress());
 }
 
 main()
